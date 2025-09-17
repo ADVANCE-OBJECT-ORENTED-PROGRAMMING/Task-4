@@ -33,6 +33,16 @@ public class MenuApp {
         });
         fileMenu.add(exitItem);
 
+        JMenu viewMenu = new JMenu("View");
+        JMenuItem homeItem = new JMenuItem("Home");
+        JMenuItem profileItem = new JMenuItem("Profile");
+        JMenuItem settingsItem = new JMenuItem("Settings");
+
+        homeItem.addActionListener(e -> cardLayout.show(cardPanel, "Home"));
+        profileItem.addActionListener(e -> cardLayout.show(cardPanel, "Profile"));
+        settingsItem.addActionListener(e -> cardLayout.show(cardPanel, "Settings"));
+
+
         frame.setJMenuBar(menuBar);
         frame.add(cardPanel);
         frame.setVisible(true);
