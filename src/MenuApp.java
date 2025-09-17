@@ -17,6 +17,11 @@ public class MenuApp {
         JPanel profilePanel = createPanel("This is Profile Page", Color.RED);
         JPanel settingsPanel = createPanel("Settings Page", Color.GREEN);
 
+        cardPanel.add(homePanel, "Home");
+        cardPanel.add(profilePanel, "Profile");
+        cardPanel.add(settingsPanel, "Settings");
+
+
         frame.add(cardPanel);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
