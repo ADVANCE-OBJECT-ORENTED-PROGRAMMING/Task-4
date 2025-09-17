@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class MenuApp {
     JFrame frame;
@@ -21,7 +22,18 @@ public class MenuApp {
         cardPanel.add(profilePanel, "Profile");
         cardPanel.add(settingsPanel, "Settings");
 
+        JMenuBar menuBar = new JMenuBar();
 
+        JMenu fileMenu = new JMenu("File");
+        JMenuItem exitItem = new JMenuItem(new AbstractAction("Exit") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        fileMenu.add(exitItem);
+
+        frame.setJMenuBar(menuBar);
         frame.add(cardPanel);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
