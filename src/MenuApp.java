@@ -13,7 +13,21 @@ public class MenuApp {
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
 
+        JPanel homePanel = createPanel("Welcome to Home Page", Color.LIGHT_GRAY);
+        JPanel profilePanel = createPanel("This is Profile Page", Color.RED);
+        JPanel settingsPanel = createPanel("Settings Page", Color.GREEN);
+
+        frame.add(cardPanel);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+    }
+
+    private JPanel createPanel(String text, Color bgColor) {
+        JPanel panel = new JPanel(new GridBagLayout());
+        panel.setBackground(bgColor);
+        JLabel label = new JLabel(text);
+        label.setFont(new Font("Arial", Font.BOLD, 20));
+        panel.add(label);
+        return panel;
     }
 }
