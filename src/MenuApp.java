@@ -55,7 +55,11 @@ public class MenuApp {
                         "About", JOptionPane.INFORMATION_MESSAGE);
             }
         });
+        helpMenu.add(aboutItem);
 
+        menuBar.add(fileMenu);
+        menuBar.add(viewMenu);
+        menuBar.add(helpMenu);
 
         frame.setJMenuBar(menuBar);
         frame.add(cardPanel);
