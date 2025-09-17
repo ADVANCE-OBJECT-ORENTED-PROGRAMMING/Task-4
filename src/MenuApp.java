@@ -42,6 +42,20 @@ public class MenuApp {
         profileItem.addActionListener(e -> cardLayout.show(cardPanel, "Profile"));
         settingsItem.addActionListener(e -> cardLayout.show(cardPanel, "Settings"));
 
+        viewMenu.add(homeItem);
+        viewMenu.add(profileItem);
+        viewMenu.add(settingsItem);
+
+        JMenu helpMenu = new JMenu("Help");
+        JMenuItem aboutItem = new JMenuItem(new AbstractAction("About") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame,
+                        "Swing Application Example\nCreated by Logical Building Guys!",
+                        "About", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
 
         frame.setJMenuBar(menuBar);
         frame.add(cardPanel);
